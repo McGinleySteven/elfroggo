@@ -1,4 +1,4 @@
 INSERT INTO Frogs (Name, ScientificName, Color) VALUES
-('Kermit', 'Hyla cinerea', 'Green'),
-('Jeramiah', 'Dendrobates tinctorius', 'Blue'),
-('Admiral Ackbar', 'Its a Trap!', 'Olive');
+('Kermit', 'Miss Piggy', 'Green1'),
+('Jeramiah', 'Dendrobates tinctorius', 'Green2'),
+('Admiral Ackbar', 'Its a Trap!', 'Green3');
