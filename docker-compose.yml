@@ -1,0 +1,22 @@
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: elfroggo
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: frogsdb
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./db/seeds.sql:/docker-entrypoint-initdb.d/seeds.sql:ro
+    ports:
+      - "5432:5432"
+
+  web:
+    build: ./web
+    environment:
+      DATABASE_URL: postgresql://elfroggo:secret@db:5432/frogsdb
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
